@@ -19,12 +19,13 @@ Add `rust-translation` to your `Cargo.toml` file:
 ```toml
 [dependencies]
 rust-translation = "0.1.0"
+tokio = { version = "1.0", features = ["full"] }
 ```
 
 ## Usage
 
 ```rust
-use rust_translation::{translate, translate_to_english, translate_from_english};
+use rust_translate::{translate, translate_to_english, translate_from_english};
 
 #[tokio::main]
 async fn main() {
