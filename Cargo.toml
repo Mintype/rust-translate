@@ -2,6 +2,7 @@
 name = "rust-translate"
 version = "0.1.0"
 edition = "2021"
+authors = ["Mintype"]
 description = "A simple Rust crate for text translation between languages."
 repository = "https://github.com/Mintype/rust-translate"
 license = "MIT"
