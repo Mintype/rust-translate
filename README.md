@@ -18,7 +18,7 @@ Add `rust-translation` to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-rust-translation = "0.1.0"
+rust-translation = "0.1.1"
 tokio = { version = "1.0", features = ["full"] }
 ```
 
