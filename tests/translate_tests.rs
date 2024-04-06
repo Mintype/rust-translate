@@ -1,4 +1,4 @@
-use rust_translate::{translate_to_english, translate};
+use rust_translate::{translate, translate_to_english, translate_from_english};
 
 #[test]
 fn test_translate() {
@@ -24,5 +24,18 @@ fn test_translate_to_english() {
 
     // Check if the result is as expected
     assert_eq!(translated_text, "Hello World");
+}
+
+#[test]
+fn test_translate_from_english() {
+    // Prepare the input parameters
+    let text = "Hello World";
+    let to = "de";
+
+    // Call the function under test
+    let translated_text = translate_from_english(text, to);
+
+    // Check if the result is as expected
+    assert_eq!(translated_text, "Hallo Welt");
 }
 
