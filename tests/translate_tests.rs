@@ -24,16 +24,26 @@ async fn test_translate() {
     }
 }
 
-#[test]
-fn test_translate_to_english() {
+#[tokio::test]
+async fn test_translate_to_english() {
     // Prepare the input parameters
-    let text = "Hallo Welt";
+    let text = "Estoy comiendo queso.";
 
     // Call the function under test
-    let translated_text = translate_to_english(text);
+    let translated_text_result = translate_to_english(text).await;
 
     // Check if the result is as expected
-    assert_eq!(translated_text, "Hello World");
+    match translated_text_result {
+        Ok(translated_text) => {
+            assert_eq!(translated_text, "I'm eating cheese.");
+        },
+        Err(err) => {
+            // Print out the error message
+            eprintln!("Error: {}", err);
+            // Fail the test
+            assert!(false);
+        }
+    }
 }
 
 #[tokio::test]
