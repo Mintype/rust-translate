@@ -1,17 +1,27 @@
 use rust_translate::{translate, translate_to_english, translate_from_english};
 
-#[test]
-fn test_translate() {
+#[tokio::test]
+async fn test_translate() {
     // Prepare the input parameters
-    let text = "Hello World";
-    let from = "en";
+    let text = "Hola Amigos";
+    let from = "es";
     let to = "de";
 
     // Call the function under test
-    let translated_text = translate(text, from, to);
+    let translated_text_result = translate(text, from, to).await;
 
     // Check if the result is as expected
-    assert_eq!(translated_text, "Hallo Welt");
+    match translated_text_result {
+        Ok(translated_text) => {
+            assert_eq!(translated_text, "Hallo Freunde");
+        },
+        Err(err) => {
+            // Print out the error message
+            eprintln!("Error: {}", err);
+            // Fail the test
+            assert!(false);
+        }
+    }
 }
 
 #[test]
