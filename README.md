@@ -14,7 +14,7 @@ A simple Rust crate for text translation between languages.
 
 ## Installation
 
-Add `rust-translation` to your `Cargo.toml` file:
+Add `rust-translation` and `tokio` to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
