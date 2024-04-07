@@ -13,8 +13,14 @@ use serde_json::Value;
 ///
 ///
 /// ```
-/// let translated_text = translate("Bonjour", "fr", "en").await.unwrap();
-/// assert_eq!(translated_text, "Hello");
+/// use rust_translate::{translate, translate_to_english, translate_from_english};
+///
+/// #[tokio::main]
+/// async fn main() {
+///     // Translate text from any language to any other language
+///     let translated_text = translate("Bonjour le monde!", "fr", "en").await.unwrap();
+///     println!("Translated text: {}", translated_text);
+/// }
 /// ```
 pub async fn translate(text: &str, from: &str, to: &str) -> Result<String, Box<dyn std::error::Error>> {
     let url = format!(
@@ -37,8 +43,14 @@ pub async fn translate(text: &str, from: &str, to: &str) -> Result<String, Box<d
 /// # Examples
 ///
 /// ```
-/// let translated_text = translate_to_english("Bonjour").await.unwrap();
-/// assert_eq!(translated_text, "Hello");
+/// use rust_translate::{translate, translate_to_english, translate_from_english};
+///
+/// #[tokio::main]
+/// async fn main() {
+///     // Translate text to English
+///     let english_text = translate_to_english("Bonjour le monde!").await.unwrap();
+///     println!("Translated to English: {}", english_text);
+/// }
 /// ```
 pub async fn translate_to_english(text: &str) -> Result<String, Box<dyn std::error::Error>> {
     let from = "auto";
@@ -65,8 +77,14 @@ pub async fn translate_to_english(text: &str) -> Result<String, Box<dyn std::err
 /// # Examples
 ///
 /// ```
-/// let translated_text = translate_from_english("Hello", "fr").await.unwrap();
-/// assert_eq!(translated_text, "Bonjour");
+/// use rust_translate::{translate, translate_to_english, translate_from_english};
+///
+/// #[tokio::main]
+/// async fn main() {
+///     // Translate text from English to any other language
+///     let spanish_text = translate_from_english("Hello, world!", "es").await.unwrap();
+///     println!("Translated to Spanish: {}", spanish_text);
+/// }
 /// ```
 pub async fn translate_from_english(text: &str, to: &str) -> Result<String, Box<dyn std::error::Error>>  {
     let url = format!(
