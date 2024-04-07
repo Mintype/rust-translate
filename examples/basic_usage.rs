@@ -1,5 +1,5 @@
 use rust_translate::{translate, translate_to_english, translate_from_english};
-
+use rust_translate::supported_languages::get_languages;
 #[tokio::main]
 async fn main() {
     // Translate text from any language to any other language
@@ -13,4 +13,8 @@ async fn main() {
     // Translate text from English to any other language
     let spanish_text = translate_from_english("Hello, world!", "es").await.unwrap();
     println!("Translated to Spanish: {}", spanish_text);
+
+    // List the supported languages of the crate
+    let supported_languages = get_languages();
+    println!("Supported languages: {:?}", supported_languages);
 }
