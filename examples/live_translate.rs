@@ -1,4 +1,4 @@
-use rust_translate::translate;
+use rust_translate::translate; // Import the library
 use std::io;
 
 #[tokio::main]
