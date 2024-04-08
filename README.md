@@ -4,7 +4,6 @@ A simple Rust crate for text translation between languages.
 
 ## Overview
 
-`rust-translation` is a easy-to-use Rust crate that simplifies the process of translating text into different languages using the Google Translate service.
 `rust-translation` is a easy-to-use Rust crate that simplifies the process of translating text into different languages using the Google Translate API.
 
 ## Features
