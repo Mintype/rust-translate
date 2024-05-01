@@ -1,10 +1,10 @@
-# rust-translation
+# rust-translate
 
 A simple Rust crate for text translation between languages.
 
 ## Overview
 
-`rust-translation` is a easy-to-use Rust crate that simplifies the process of translating text into different languages using the Google Translate API.
+`rust-translate` is a easy-to-use Rust crate that simplifies the process of translating text into different languages using the Google Translate API.
 
 ## Features
 
@@ -14,13 +14,15 @@ A simple Rust crate for text translation between languages.
 
 ## Installation
 
-Add `rust-translation` and `tokio` to your `Cargo.toml` file:
+Add `rust-translate` and `tokio` to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-rust-translation = "0.1.2"
+rust-translate = "X.X.X"
 tokio = { version = "1.0", features = ["full"] }
 ```
+
+Add the latest version of `rust-translate` with `cargo add rust-translate`.
 
 ## Usage
 
